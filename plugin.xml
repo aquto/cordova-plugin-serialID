@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.plugin.serialID"
+      version="0.0.1">
+
+    <name>serialID</name>
+    <description>serialID plugin for Android</description>
+    <license>MIT</license>
+    <keywords>cordova,serialID</keywords>
+
+    <js-module src="www/serialID.js" name="serialIDPlugin">
+        <clobbers target="window.plugins.serialID" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="serialID">
+              <param name="android-package" value="com.plugin.serialID.serialIDPlugin"/>
+            </feature>
+        </config-file>
+
+
+        <source-file src="src/android/serialIDPlugin.java" target-dir="src/com/plugin/serialID" />
+
+    </platform>
+
+
+</plugin>
